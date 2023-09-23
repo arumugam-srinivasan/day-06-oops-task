@@ -1,0 +1,29 @@
+class Uber {
+    constructor(distance, time) {
+      this.distance = distance; // The distance of the ride in miles
+      this.time = time; // The duration of the ride in minutes
+    }
+  
+    calculatePrice() {
+      // Base fare and rate per mile and minute
+      const baseFare = 50;
+      const ratePerMile = 75;
+      const ratePerMinute = 80;
+  
+      // Calculate the total fare based on distance and time
+      const distanceFare = this.distance * ratePerMile;
+      const timeFare = this.time * ratePerMinute;
+      const totalFare = baseFare + distanceFare + timeFare;
+  
+      return totalFare;
+    }
+  }
+  
+  // Usage example
+  const distance = 5; // 5 miles
+  const time = 15; // 15 minutes
+  const uberRide = new Uber(distance, time);
+  const price = uberRide.calculatePrice();
+  
+  console.log(`The Uber price for the ride is ${price}`);
+  
